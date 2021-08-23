@@ -1,0 +1,100 @@
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<script>
+      function generatePDF() {
+        // Choose the element that our invoice is rendered in.
+        const element = document.getElementById("invoice");
+        // Choose the element and save the PDF for our user.
+        html2pdf()
+          .from(element)
+          .save();
+      }
+    </script>
+
+</head>
+<body>
+  <table>
+
+      <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Date Of Birth</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Password</th>
+      <th>Edit Data</th>
+      <th>delete Data</th>
+      <th>download</th>
+
+      </tr>
+          {% for i in hello %}
+                <tr>
+        <td>
+        {{i}}
+      </td>
+          <td>
+          {{i.email}}
+        </td>
+          <td>
+          {{i.mobile}}
+        </td>
+   
+          <td>
+          {{i.dob}}
+        </td>
+
+          <td>
+          {{i.gender}}
+        </td>
+
+          <td>
+          {{i.address}}
+        </td>
+
+          <td>
+          {{i.city}}
+        </td>
+
+          <td>
+          {{i.password}}
+        </td>
+        
+
+
+        
+        <td><a href="{% url 'edit' i.id %}">Edit</a></td>
+        <td><a href="{% url 'delete' i.id %}" onclick="return confirm('Are You Sure To Delete {{i.fullname}}');">Delete</a></td>
+        <td><a href="{{i.upload.url}}" download>{{i.upload}} </td>
+        <td><img src="{{i.upload.url}}"  width="100" height="100"></td>
+        <td><a href="{{i.upload.url}}" target="_blank">view</td>
+        <td><a href="{% url 'rename' i.id %}" target="_blank">Rename</a>></td>
+
+
+
+
+      </tr>
+
+    {% endfor %}
+    <center><a href="/reg" class="btn btn-primary">Add New Record</a></center>  
+
+  </body>
+</html>

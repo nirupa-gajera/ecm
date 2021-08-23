@@ -1,0 +1,300 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Shop - Vuexy - Bootstrap HTML admin template</title>
+    <link rel="apple-touch-icon" href="{%static 'app-assets/images/ico/apple-icon-120.png'%}">
+    <link rel="shortcut icon" type="image/x-icon" href="{%static 'app-assets/images/ico/favicon.ico'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/vendors.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/extensions/nouislider.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/extensions/toastr.min.css'%}">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/bootstrap.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/bootstrap-extended.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/colors.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/components.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/themes/dark-layout.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/themes/bordered-layout.css'%}">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/menu/menu-types/vertical-menu.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/plugins/extensions/ext-component-sliders.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/pages/app-ecommerce.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/plugins/extensions/ext-component-toastr.css'%}">
+
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- END: Custom CSS-->
+    <style>
+    .dropbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .dropbtn:hover, .dropbtn:focus {
+        background-color: #3e8e41;
+      }
+      
+      #myInput {
+        box-sizing: border-box;
+        background-image: url('searchicon.png');
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 14px 20px 12px 45px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      #myInput:focus {outline: 3px solid #ddd;}
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        border: 1px solid #ddd;
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-content a:hover {background-color: #f1f1f1}
+      
+      .show {display:block;}
+</style>
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern content-detached-left-sidebar  " data-open="click" data-menu="vertical-menu-modern" data-col="content-detached-left-sidebar">
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content ecommerce-application">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+          
+            <div class="content-detached content-right">
+                <div class="content-body">
+                    <!-- E-commerce Content Section Starts -->
+                    <section id="ecommerce-header">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="ecommerce-header-items">
+                                   
+                                    <!-- <div class="view-options d-flex"> -->
+                                        <div class="btn-group dropdown-sort">
+                                          
+                                        </div>
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- E-commerce Content Section Starts -->
+
+                    <!-- background Overlay when sidebar is shown  starts-->
+                    <div class="body-content-overlay"></div>
+                    <!-- background Overlay when sidebar is shown  ends-->
+
+
+                    <!-- E-commerce Search Bar Starts -->
+                    
+                    <!-- E-commerce Search Bar Ends -->
+                   
+
+                    <!-- E-commerce Products Starts -->
+                    
+                    <section id="ecommerce-products" class="grid-view">
+                        <div class="card ecommerce-card"  > 
+                            
+                            <div class="item-img text-center">
+                                <a href="app-ecommerce-details.html">
+                                <img style="height:180px; width:180px;" class="img-fluid card-img-top"{% if view.name.name.image %} src="{{view.name.name.image.url}}" {% endif %} alt="img-placeholder" /></a>
+                            </div>
+                            <div class="card-body" style="width:1000;">
+                                <div class="item-wrapper">
+                                    <div class="item-rating">
+                                        <ul class="unstyled-list list-inline">
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                                        </ul>
+                                    </div>
+                                    
+
+                                <div>
+                                <h6 class="item-price">₹{{view.name.name.price}}</h6>
+                                </div>
+                                </div>
+                                <h6 class="item-name">
+                                    <a class="text-body" href="app-ecommerce-details.html">{{view.name.name.name}}</a>
+                                    <a class="text-body" href="app-ecommerce-details.html">{{view.name.name.brand}}</a>
+                                    <a class="text-body" href="app-ecommerce-details.html">In Stock {{view.name.name.quantity}}</a>
+
+                                    <!-- <span class="card-text item-company">By <a href="javascript:void(0)" class="company-name">Apple</a></span> -->
+                                </h6>
+                                <ul class="card-text">
+                                    {% for j in m1 %}
+                                        <li>{{j}}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="item-options text-center">
+                                <div class="item-wrapper">
+                                    <div class="item-cost">
+                                        <h4 class="item-price">₹{{view.name.name.price}}</h4>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        
+                    </section>
+                    <!-- E-commerce Products Ends -->
+
+                    <!-- E-commerce Pagination Starts -->
+                    <section id="ecommerce-pagination">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center mt-2">
+                                        <li class="page-item prev-item"><a class="page-link" href="javascript:void(0);"></a></li>
+                                        <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                        <li class="page-item" aria-current="page"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">6</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">7</a></li>
+                                        <li class="page-item next-item"><a class="page-link" href="javascript:void(0);"></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- E-commerce Pagination Ends -->
+
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-light">
+        <p class="clearfix mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020<a class="ml-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+    </footer>
+    <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+    <!-- END: Footer-->
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="{% static 'app-assets/vendors/js/vendors.min.js'%}"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'app-assets/vendors/js/extensions/wNumb.min.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/extensions/nouislider.min.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/extensions/toastr.min.js'%}"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{% static 'app-assets/js/core/app-menu.js'%}"></script>
+    <script src="{% static 'app-assets/js/core/app.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="{% static 'app-assets/js/scripts/pages/app-ecommerce.js'%}"></script>
+    <!-- END: Page JS-->
+
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
+    <script>
+        function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+<script>
+    $(function () {
+        $("#search").autocomplete({
+            source: "{% url 'autocomplete' %}",
+            minLength: 1
+        });
+    });
+</script>
+
+</body>
+<!-- END: Body-->
+
+</html>

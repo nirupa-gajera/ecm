@@ -1,0 +1,18 @@
+<h2>Rename File</h2>
+  <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label>
+          Filename:
+          </label>
+          <input type="text" id="myFile" name="txt" value={{editdata.fullname}}>
+
+          <label>
+            Image:
+            </label>
+            <input type="file" id="myFile" name="upload">
+            <img style="width:100px; height:100px;" src="{{editdata.upload.url}}">
+  
+    <button type="submit" class="btn">Save</button>
+  </form>
+</div>
+

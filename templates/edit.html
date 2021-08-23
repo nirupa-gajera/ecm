@@ -1,0 +1,122 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<style>  
+body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+.container {  
+    padding: 50px;  
+  background-color: lightblue;  
+}  
+  
+input[type=text], input[type=password], textarea {  
+  width: 100%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #ce7a7a;  
+}  
+input[type=text]:focus, input[type=password]:focus {  
+  background-color: lightpink;  
+  outline: none;  
+}  
+ div {  
+            padding: 10px 0;  
+         }  
+hr {  
+  border: 1px solid #f1f1f1;  
+  margin-bottom: 25px;  
+}  
+.registerbtn {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 16px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 100%;  
+  opacity: 0.9;  
+}  
+.registerbtn:hover {  
+  opacity: 1;  
+}  
+</style>  
+</head>  
+<body>  
+<form method="POST" enctype="multipart/Form-data">  
+	{% csrf_token %}
+  <div class="container">  
+  <center>  <h1>Registeration Form</h1> </center>  
+  <hr>
+  
+<label>   
+mobile :  
+</label>  
+<input type="text" id="number" name="country code" placeholder="country code" value="+91" size="2"/>  
+<input type="text" id="number" name="mobile" placeholder="mobile no"size="10" value={{editdata.mobile}}> <br> <br>
+
+
+
+ <label for="birthday">
+ dob :
+</label>
+ <input type="date" id="dob" placeholder="dob" value={{editdata.dob}} name="dob">
+ 
+
+<br>
+<br>
+
+<label>   
+gender :  
+</label>
+<select name="gender" id="gender" size="1">
+{% if editdata.gender %}
+    <option value="{{editdata.gender}}">{{editdata.gender}}</option>
+{% endif %}
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Other">Other</option>
+</select>
+<br>  
+<br>  
+<br>
+  
+<label>address :</label> 
+<textarea cols="80" rows="2" name="address">   {{editdata.address}}
+</textarea>  
+<br> <br>  
+
+<label>
+	city :
+</label>
+<select name="city" id="city" size="1">
+{% if editdata.city %}
+    <option value="{{editdata.city}}">{{editdata.city}}</option>
+{% endif %}
+  <option value="ahmedabad">Ahmedabad</option>
+  <option value="surat">Surat</option>
+  <option value="rajkot">Rajkot</option>
+  <option value="mahesana">Mahesana</option>
+  <option value="bombay">Bombay</option>
+  <option value="amreli">Amreli</option>
+  <option value="bhavnagar">Bhavnagar</option>
+  </select>
+
+<br>
+<br>
+<label>
+Password:
+</label>  
+<input type="Password" id="pass" value={{editdata.password}} placeholder="password" name="password"> <br>   
+<br> <br>  
+
+<input type="file" id="myFile" name="upload" value={{editdata.upload}}>
+
+    <button type="submit" class="btn btn-success">Update</button>  
+  
+</form>  
+</body>  
+</html>  

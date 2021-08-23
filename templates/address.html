@@ -1,0 +1,164 @@
+{%load static%}
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+  <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+  <meta name="author" content="PIXINVENT">
+  <title>Address page - Vuexy - Bootstrap HTML admin template</title>
+  <link rel="apple-touch-icon" href="{%static 'app-assets/images/ico/apple-icon-120.png'%}">
+  <link rel="shortcut icon" type="image/x-icon" href="{%static 'app-assets/images/ico/favicon.ico'%}">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/vendors.min.css'%}">
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/bootstrap.css'%}">
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/bootstrap-extended.css'%}">
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/colors.css'%}">
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/components.css'%}">
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/themes/dark-layout.css'%}">
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/themes/bordered-layout.css'%}">
+
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/core/menu/menu-types/vertical-menu.css'%}">
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/plugins/forms/form-validation.css'%}">
+  <link rel="stylesheet" type="text/css" href="{%static 'app-assets/css/pages/page-auth.css'%}">
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="{%static 'assets/css/style.css'%}">
+  <!-- END: Custom CSS-->
+
+</head>
+<div id="step-address" class="content">
+                            
+
+    <!-- Checkout Customer Address Left starts -->
+    <!-- <div class="card">
+        <div class="card-header flex-column align-items-start">
+            <h4 class="card-title">Add New Address</h4>
+            <p class="card-text text-muted mt-25">Be sure to check "Deliver to this address" when you have finished</p>
+        </div>
+
+<div class="card-body">
+    <div class="row">
+        <form class="list-view product-checkout" method="post" class="list-view product-checkout">
+        {% csrf_token %}
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group mb-2"> -->
+
+                <div id="step-address" class="content">
+                    <form id="checkout-address" method="POST" class="list-view product-checkout">
+                        {% csrf_token %}
+
+                        <!-- Checkout Customer Address Left starts -->
+                        <div class="card">
+                            <div class="card-header flex-column align-items-start">
+                                <h4 class="card-title">Add New Address</h4>
+                                <p class="card-text text-muted mt-25">Be sure to check "Deliver to this address" when you have finished</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="form-group mb-2">
+               
+                <label for="checkout-name">Full Name:</label>
+                <input type="text" id="checkout-name" class="form-control" name="fname" placeholder="full name" tabindex="2" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group mb-2">
+                <label for="checkout-number">Mobile Number:</label>
+                <input type="number" id="checkout-number" class="form-control" name="mobile" placeholder="0123456789" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group mb-2">
+                <label for="checkout-apt-number">Flat, House No:</label>
+                <input type="number" id="checkout-apt-number" class="form-control" name="home_no" placeholder="" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group mb-2">
+                <label for="checkout-landmark">Landmark:</label>
+                <input type="text" id="checkout-landmark" class="form-control" name="landmark" placeholder="Near Apollo Hospital" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group mb-2">
+                <label for="checkout-city">Town/City:</label>
+                <input type="text" id="checkout-city" class="form-control" name="city" placeholder="city name" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group mb-2">
+                <label for="checkout-pincode">Pincode:</label>
+                <input type="number" id="checkout-pincode" class="form-control" name="pincode" placeholder="201301" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group mb-2">
+                <label for="checkout-state">State:</label>
+                <input type="text" id="checkout-state" class="form-control" name="state" placeholder="gujarat" />
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group mb-2">
+                <label for="add-type">Address Type:</label>
+                <select class="form-control" id="add-type" name="type">
+                    <option>Home</option>
+                    <option>Work</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-12">
+            <input type="submit" class="btn btn-primary" value="save">
+        </div>
+    </form>
+
+    </div>
+</div>
+</div>
+<!-- Checkout Customer Address Left ends -->
+
+<!-- Checkout Customer Address Right starts -->
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="{%static 'app-assets/vendors/js/vendors.min.js'%}"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{%static 'app-assets/vendors/js/forms/validation/jquery.validate.min.js'%}"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{%static 'app-assets/js/core/app-menu.js'%}"></script>
+    <script src="{%static 'app-assets/js/core/app.js'%}"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="{%static 'app-assets/js/scripts/pages/page-auth-register.js'%}"></script>
+    <!-- END: Page JS-->
+
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
+</body>
+<!-- END: Body-->
+
+</html>

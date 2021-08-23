@@ -1,0 +1,414 @@
+{%include 'vendor/adminheader.html'%}
+{%include 'vendor/vendormenu.html'%}
+
+{%load static%}
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Shop - Vuexy - Bootstrap HTML admin template</title>
+    <link rel="apple-touch-icon" href="{%static 'app-assets/images/ico/apple-icon-120.png'%}">
+    <link rel="shortcut icon" type="image/x-icon" href="{%static 'app-assets/images/ico/favicon.ico'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/vendors.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/extensions/nouislider.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'app-assets/vendors/css/extensions/toastr.min.css'%}">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/bootstrap.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/bootstrap-extended.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/colors.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/components.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/themes/dark-layout.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/themes/bordered-layout.css'%}">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/menu/menu-types/vertical-menu.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/plugins/extensions/ext-component-sliders.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/pages/app-ecommerce.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/plugins/extensions/ext-component-toastr.css'%}">
+
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- END: Custom CSS-->
+    <style>
+    .dropbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .dropbtn:hover, .dropbtn:focus {
+        background-color: #3e8e41;
+      }
+      
+      #myInput {
+        box-sizing: border-box;
+        background-image: url('searchicon.png');
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 14px 20px 12px 45px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      #myInput:focus {outline: 3px solid #ddd;}
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        border: 1px solid #ddd;
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-content a:hover {background-color: #f1f1f1}
+      
+      .show {display:block;}
+</style>
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern content-detached-left-sidebar navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="content-detached-left-sidebar">
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content ecommerce-application">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-left mb-0">Shop</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">eCommerce</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Shop
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+                    <div class="form-group breadcrumb-right">
+                        <div class="dropdown">
+                            <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="grid"></i></button>
+                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="app-todo.html"><i class="mr-1" data-feather="check-square"></i><span class="align-middle">Todo</span></a><a class="dropdown-item" href="app-chat.html"><i class="mr-1" data-feather="message-square"></i><span class="align-middle">Chat</span></a><a class="dropdown-item" href="app-email.html"><i class="mr-1" data-feather="mail"></i><span class="align-middle">Email</span></a><a class="dropdown-item" href="app-calendar.html"><i class="mr-1" data-feather="calendar"></i><span class="align-middle">Calendar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-detached content-right">
+                <div class="content-body">
+                    <!-- E-commerce Content Section Starts -->
+                    <section id="ecommerce-header">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="ecommerce-header-items">
+                                    <div class="result-toggler">
+                                        <button class="navbar-toggler shop-sidebar-toggler" type="button" data-toggle="collapse">
+                                            <span class="navbar-toggler-icon d-block d-lg-none"><i data-feather="menu"></i></span>
+                                        </button>
+                                        <div class="search-results">16285 results found</div>
+                                    </div>
+                                    <div class="view-options d-flex">
+                                        <div class="btn-group dropdown-sort">
+                                            <button type="button" class="btn btn-outline-primary dropdown-toggle mr-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="active-sorting">Featured</span>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="javascript:void(0);">Featured</a>
+                                                <a class="dropdown-item" href="javascript:void(0);">Lowest</a>
+                                                <a class="dropdown-item" href="javascript:void(0);">Highest</a>
+
+                                            </div>
+                                        </div>
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-icon btn-outline-primary view-btn grid-view-btn">
+                                                <input type="radio" name="radio_options" id="radio_option1" checked />
+                                                <i data-feather="grid" class="font-medium-3"></i>
+                                            </label>
+                                            <label class="btn btn-icon btn-outline-primary view-btn list-view-btn">
+                                                <input type="radio" name="radio_options" id="radio_option2" />
+                                                <i data-feather="list" class="font-medium-3"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- E-commerce Content Section Starts -->
+
+                    <!-- background Overlay when sidebar is shown  starts-->
+                    <div class="body-content-overlay"></div>
+                    <!-- background Overlay when sidebar is shown  ends-->
+
+
+                    <!-- E-commerce Search Bar Starts -->
+                    
+                    <!-- E-commerce Search Bar Ends -->
+                   
+
+                    <!-- E-commerce Products Starts -->
+                    {% if data %}
+                    <section id="ecommerce-products" class="grid-view">
+                        <div class="card ecommerce-card" >
+                            {% for i in data %}
+                            
+                            <div class="item-img text-center">
+                                <a href="app-ecommerce-details.html">
+                                <img style="height:180px; width:180px;" class="img-fluid card-img-top"{% if i.image %} src="{{i.image.url}}" {% endif %} alt="img-placeholder" /></a>
+                            </div>
+                            <div class="card-body" >
+                                <div class="item-wrapper">
+                                    <div class="item-rating">
+                                        <ul class="unstyled-list list-inline">
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                                        </ul>
+                                    </div>
+                                    
+
+                                <div>
+                                <h6 class="item-price">₹{{i.price}}</h6>
+                                </div>
+                                </div>
+                                <h6 class="item-name">
+                                    <a class="text-body" href="app-ecommerce-details.html">{{i.name}}</a>
+                                    <a class="text-body" href="app-ecommerce-details.html">{{i.brand}}</a>
+                                    <a class="text-body" href="app-ecommerce-details.html">In Stock {{i.quantity}}</a>
+
+                                    <!-- <span class="card-text item-company">By <a href="javascript:void(0)" class="company-name">Apple</a></span> -->
+                                </h6>
+                                <p class="card-text item-description">
+                                    {{i.desc}}
+                                </p>
+                            </div>
+                            <div class="item-options text-center">
+                                <div class="item-wrapper">
+                                    <div class="item-cost">
+                                        <h4 class="item-price">₹{{i.price}}</h4>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0)" class="btn btn-light btn-wishlist">
+                                    <i data-feather="heart"></i>
+                                    <span>Wishlist</span>
+                                </a>
+                                <a href="{% url 'Add_cart' i.id %}" class="btn btn-primary">
+                                    <input type="button" value="Add">
+                                    
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        
+                    </section>
+                    {% endif %}
+
+                    {% if myList %}
+                    <section id="ecommerce-products" class="grid-view">
+                        <div class="card ecommerce-card" >
+                            {% for i in myList %}
+                            
+                            <div class="item-img text-center">
+                                <a href="app-ecommerce-details.html">
+                                <img style="height:180px; width:180px;" class="img-fluid card-img-top"{% if i.image %} src="{{i.image.url}}" {% endif %} alt="img-placeholder" /></a>
+                            </div>
+                            <div class="card-body" >
+                                <div class="item-wrapper">
+                                    <div class="item-rating">
+                                        <ul class="unstyled-list list-inline">
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                                            <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                                        </ul>
+                                    </div>
+                                    
+
+                                <div>
+                                <h6 class="item-price">₹{{i.price}}</h6>
+                                </div>
+                                </div>
+                                <h6 class="item-name">
+                                    <a class="text-body" href="app-ecommerce-details.html">{{i.name}}</a>
+                                    <a class="text-body" href="app-ecommerce-details.html">{{i.brand}}</a>
+                                    <a class="text-body" href="app-ecommerce-details.html">In Stock {{i.quantity}}</a>
+
+                                    <!-- <span class="card-text item-company">By <a href="javascript:void(0)" class="company-name">Apple</a></span> -->
+                                </h6>
+                                <p class="card-text item-description">
+                                    {{i.desc}}
+                                </p>
+                            </div>
+                            <div class="item-options text-center">
+                                <div class="item-wrapper">
+                                    <div class="item-cost">
+                                        <h4 class="item-price">₹{{i.price}}</h4>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0)" class="btn btn-light btn-wishlist">
+                                    <i data-feather="heart"></i>
+                                    <span>Wishlist</span>
+                                </a>
+                                <a href="{% url 'Add_cart' i.id %}" class="btn btn-primary">
+                                    <input type="button" value="Add">
+                                    
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        
+                    </section>
+                    {% endif %}
+                    <!-- E-commerce Products Ends -->
+
+                    <!-- E-commerce Pagination Starts -->
+                    <section id="ecommerce-pagination">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center mt-2">
+                                        <li class="page-item prev-item"><a class="page-link" href="javascript:void(0);"></a></li>
+                                        <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                        <li class="page-item" aria-current="page"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">6</a></li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">7</a></li>
+                                        <li class="page-item next-item"><a class="page-link" href="javascript:void(0);"></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- E-commerce Pagination Ends -->
+
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-light">
+        <p class="clearfix mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020<a class="ml-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+    </footer>
+    <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+    <!-- END: Footer-->
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="{% static 'app-assets/vendors/js/vendors.min.js'%}"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static 'app-assets/vendors/js/extensions/wNumb.min.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/extensions/nouislider.min.js'%}"></script>
+    <script src="{% static 'app-assets/vendors/js/extensions/toastr.min.js'%}"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{% static 'app-assets/js/core/app-menu.js'%}"></script>
+    <script src="{% static 'app-assets/js/core/app.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="{% static 'app-assets/js/scripts/pages/app-ecommerce.js'%}"></script>
+    <!-- END: Page JS-->
+
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
+    <script>
+        function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+<script>
+    $(function () {
+        $("#search").autocomplete({
+            source: "{% url 'autocomplete' %}",
+            minLength: 1
+        });
+    });
+</script>
+
+</body>
+<!-- END: Body-->
+
+</html>
